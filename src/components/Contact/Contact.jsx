@@ -4,10 +4,12 @@ import { IoMdPerson } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
 import { deleteContact } from "../../redux/store";
 
-export default function Contact({ contact: { id, name, number } }) {
+export default function Contact({ contacts: { id, name, number } }) {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
+    console.log(id);
+
     dispatch(deleteContact(id));
   };
 
