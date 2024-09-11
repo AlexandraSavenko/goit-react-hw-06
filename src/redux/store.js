@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-const deleteContact = (vId, vName, vNumb) => {
+export const deleteContact = (vId, vName, vNumb) => {
   return {
     type: "number/deleteContact",
     patload: {
@@ -10,7 +10,7 @@ const deleteContact = (vId, vName, vNumb) => {
   };
 };
 
-const addContact = (vId, vName, vNumb) => {
+export const addContact = (vId, vName, vNumb) => {
   return {
     type: "number/addContact",
     patload: {
@@ -31,9 +31,20 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
+  console.log(action);
+
   return state;
 };
 
 export const store = configureStore({
   reducer: rootReducer,
 });
+
+// reducers: {
+//  deleteContact: (state, action) => {
+//   state.contacts = state.contacts.filter(el => [el.id](<http://el.id/>) !== action.payload)
+//  },
+//  addContact: (state, action) => {
+//   state.contacts = [...state.contacts, action.payload]
+//  },
+// },
