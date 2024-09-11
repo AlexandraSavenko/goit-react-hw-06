@@ -1,21 +1,24 @@
-import { configureStore } from "@reduxjs/toolkit";
-export const deleteContact = (vId) => {
-  return {
-    type: "number/deleteContact",
-    payload: vId,
-  };
-};
+import { configureStore, createAction } from "@reduxjs/toolkit";
+export const deleteContact = createAction("number/deleteContact");
 
-export const addContact = (vId, vName, vNumb) => {
-  return {
-    type: "number/addContact",
-    payload: {
-      id: vId,
-      name: vName,
-      phoneNumber: vNumb,
-    },
-  };
-};
+// export const deleteContact = (vId) => {
+//   return {
+//     type: ,
+//     payload: vId,
+//   };
+// };
+
+export const addContact = createAction("number/addContact");
+// export const addContact = (vId, vName, vNumb) => {
+//   return {
+//     type: "number/addContact",
+//     payload: {
+//       id: vId,
+//       name: vName,
+//       phoneNumber: vNumb,
+//     },
+//   };
+// };
 
 const initialState = {
   contacts: [
@@ -35,7 +38,8 @@ const rootReducer = (state = initialState, action) => {
           (contact) => contact.id !== action.payload
         ),
       };
-
+    case "number/addContact":
+      return { ...state, contacts: [...state.contacts, action.payload] };
     default:
       return state;
   }
