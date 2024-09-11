@@ -1,14 +1,7 @@
 import { configureStore, createAction } from "@reduxjs/toolkit";
-export const deleteContact = createAction("number/deleteContact");
+export const deleteContact = createAction("contacts/deleteContact");
 
-// export const deleteContact = (vId) => {
-//   return {
-//     type: ,
-//     payload: vId,
-//   };
-// };
-
-export const addContact = createAction("number/addContact");
+export const addContact = createAction("contacts/addContact");
 // export const addContact = (vId, vName, vNumb) => {
 //   return {
 //     type: "number/addContact",
@@ -31,14 +24,14 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "number/deleteContact":
+    case "contacts/deleteContact":
       return {
         ...state,
         contacts: state.contacts.filter(
           (contact) => contact.id !== action.payload
         ),
       };
-    case "number/addContact":
+    case "contacts/addContact":
       return { ...state, contacts: [...state.contacts, action.payload] };
     default:
       return state;
