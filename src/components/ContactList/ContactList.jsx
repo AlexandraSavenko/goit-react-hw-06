@@ -3,7 +3,7 @@ import Contact from "../Contact/Contact";
 import css from "./ContactList.module.css";
 
 export default function ContactList() {
-  const phoneBook = useSelector((state) => state.contacts);
+  const phoneBook = useSelector((state) => state.contacts.contacts);
 
   return (
     <ul>
