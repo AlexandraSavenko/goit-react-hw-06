@@ -29,24 +29,3 @@ const slice = createSlice({
 
 export const { addContact, deleteContact } = slice.actions;
 export default slice.reducer;
-// __________________________________________________________________________________________________________
-// import { createAction } from "@reduxjs/toolkit";
-// export const deleteContact = createAction("contacts/deleteContact");
-
-// export const addContact = createAction("contacts/addContact");
-
-// const initialState = {
-//
-// };
-
-// export default function contactsReducer(state = initialState.contacts, action) {
-//   switch (action.type) {
-//     case "contacts/deleteContact":
-//       return state.filter((contact) => contact.id !== action.payload);
-//     case "contacts/addContact":
-//       return [...state, action.payload];
-
-//     default:
-//       return state;
-//   }
-// }
