@@ -2,10 +2,10 @@ import { useSelector } from "react-redux";
 import Contact from "../Contact/Contact";
 import css from "./ContactList.module.css";
 import { filteredContacts } from "../../redux/filtersSlice";
-import { savedContacts } from "../../redux/contactsSlice";
+import { selectContacts } from "../../redux/contactsSlice";
 
 export default function ContactList() {
-  const phoneBook = useSelector(savedContacts);
+  const phoneBook = useSelector(selectContacts);
   const filterValue = useSelector(filteredContacts);
 
   const visibleNumbers = phoneBook.filter((contact) => {

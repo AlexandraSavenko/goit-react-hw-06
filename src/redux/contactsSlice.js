@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-export const savedContacts = (state) => state.contacts.contacts;
+export const selectContacts = (state) => state.contacts.contacts;
 export const slice = createSlice({
   name: "contacts",
   initialState: {
