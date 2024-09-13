@@ -11,10 +11,11 @@ const slice = createSlice({
   },
   reducers: {
     addContact: (state, action) => {
-      return {
-        ...state,
-        contacts: [...state.contacts, action.payload],
-      };
+      state.contacts.push(action.payload);
+      // return {
+      //   ...state,
+      //   contacts: [...state.contacts, action.payload],
+      // };
     },
     deleteContact: (state, action) => {
       return {
