@@ -18,12 +18,15 @@ const slice = createSlice({
       // };
     },
     deleteContact: (state, action) => {
-      return {
-        ...state,
-        contacts: state.contacts.filter(
-          (contact) => contact.id !== action.payload
-        ),
-      };
+      state.contacts = state.contacts.filter(
+        (contact) => contact.id !== action.payload
+      );
+      // return {
+      //   ...state,
+      //   contacts: state.contacts.filter(
+      //     (contact) => contact.id !== action.payload
+      //   ),
+      // };
     },
   },
 });
